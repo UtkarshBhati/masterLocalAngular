@@ -1,0 +1,17 @@
+
+<div class="container">
+  <app-header (featureSelected)="displaySelected($event)"></app-header>
+<div class="row">
+<div class="col-md-12">
+  <app-invest-list *ngIf="displayedFeature==='invest'"></app-invest-list>
+  <app-invest *ngIf="displayedFeature==='invest'"></app-invest>
+   <app-banks (triggerBankDetailsPopulation)="selectedBank($event)" 
+              *ngIf="displayedFeature!=='invest'">{{selectedBankDetails}}
+          </app-banks> 
+   
+<!--<h1>
+    {{title}}
+  </h1>-->
+</div>
+</div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container-fluid">
+   <p>Banks Component Starts !</p>
+    <div class="main-content">  
+      <div class="col-xs-5">
+           <app-bank-item (selectedBank)="displayBankDetails($event)"
+            *ngFor="let ele of banks; let i = index"
+              [bank]="ele"></app-bank-item>
+      </div>
+    
+    <div class="col-xs-1">  </div>
+      <div class="col-xs-6" >
+             <app-bank-details
+              *ngIf="selectedBank; else infoText"
+              ><ng-content></ng-content></app-bank-details>
+               <ng-template #infoText>
+      <p>Please select a Bank!</p>
+    </ng-template>
+      </div>
+      </div>
+ <p>Banks Component Ends !</p>
+</div>
