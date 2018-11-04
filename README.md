@@ -1,0 +1,2 @@
+# masterLocalAngular
+AngularTestProjects
